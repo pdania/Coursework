@@ -2,9 +2,9 @@ package Shapes;
 
 public class MyTriangle implements Shape {
     //Sides of Triangle
-    private double sideA;
-    private double sideB;
-    private double sideC;
+    private LineSegment sideA = new LineSegment();
+    private LineSegment sideB = new LineSegment();
+    private LineSegment sideC = new LineSegment();
 
     //Angels of triangle
     private float angleA;
@@ -37,26 +37,26 @@ public class MyTriangle implements Shape {
     private Type triangleType;
 
     //Constructors
-    public MyTriangle(double sideA, double sideB, float angleC){
+    public MyTriangle(LineSegment sideA, LineSegment sideB, float angleC){
         this.sideA = sideA;
         this.sideB = sideB;
         this.angleC = angleC;
-        sideC= cosinusTeorem(sideA,sideB,angleC);
+        sideC.setLength(cosinusTeorem(sideA,sideB,angleC));
         angleB = sinusTeorem(sideC,angleC,sideB);
         angleA = 180 - angleC - angleB;
         triangleType = whichType();
 
     }
-    public MyTriangle(double sideA, float angleB, float angleC){
+    public MyTriangle(LineSegment sideA, float angleB, float angleC){
         this.sideA = sideA;
         this.angleB = angleB;
         this.angleC = angleC;
         angleA = 180 - angleC - angleB;
-        sideB = sinusTeorem(sideA,angleA,angleB);
-        sideC = sinusTeorem(sideA,angleA,angleC);
+        sideB.setLength(sinusTeorem(sideA,angleA,angleB));
+        sideC.setLength( sinusTeorem(sideA,angleA,angleC));
         triangleType = whichType();
     }
-    public MyTriangle(double sideA, double sideB, double sideC){
+    public MyTriangle(LineSegment sideA, LineSegment sideB, LineSegment sideC){
         this.sideA = sideA;
         this.sideB = sideB;
         this.sideC = sideC;
@@ -73,30 +73,30 @@ public class MyTriangle implements Shape {
     }
 
     // a^{2}=b^{2}+c^{2}-2bc* cos(angleA)
-    private double cosinusTeorem(double b, double c, float alpha){
-    return Math.sqrt(b*b+c*c-2*b*c*Math.cos(alpha));
+    private double cosinusTeorem(LineSegment b, LineSegment c, float alpha){
+    return Math.sqrt(b.getLength()*b.getLength()+c.getLength()*c.getLength()-2*b.getLength()*c.getLength()*Math.cos(alpha));
     }
     //(a/sinA=b/sinB)
-    private float sinusTeorem(double a, float alpha, double b){
-        return (float) (a/(Math.sin(alpha)*b));
+    private float sinusTeorem(LineSegment a, float alpha, LineSegment b){
+        return (float) (a.getLength()/(Math.sin(alpha)*b.getLength()));
     }
-    private double sinusTeorem(double a, float alpha, float beta){
-        return  ((a*Math.sin(beta))/Math.sin(alpha));
+    private double sinusTeorem(LineSegment a, float alpha, float beta){
+        return  ((a.getLength()*Math.sin(beta))/Math.sin(alpha));
     }
 
-    private float alpha(double a, double b, double c){
-        return (float) Math.acos((b*b+c*c-a*a)/(2*b*c));
+    private float alpha(LineSegment a, LineSegment b, LineSegment c){
+        return (float) Math.acos((b.getLength()*b.getLength()+c.getLength()*c.getLength()-a.getLength()*a.getLength())/(2*b.getLength()*c.getLength()));
     }
 
     @Override
     public double perimeter() {
-        return sideA+sideB+sideC;
+        return sideA.getLength()+sideB.getLength()+sideC.getLength();
     }
 
     @Override
     public double area() {
         double p = perimeter()/2;
-        return Math.sqrt(p*(p-sideA)*(p-sideB)*(p-sideC));
+        return Math.sqrt(p*(p-sideA.getLength())*(p-sideB.getLength())*(p-sideC.getLength()));
     }
 
     public double piphagorosC(double a, double b){
@@ -122,40 +122,40 @@ public class MyTriangle implements Shape {
         return area()/(perimeter()/2);
     }
     public double radiusOpys(){
-        return (sideA*sideB*sideC)/(4*area());
+        return (sideA.getLength()*sideB.getLength()*sideC.getLength())/(4*area());
     }
 
-    public double getSideA() {
+    public LineSegment getSideA() {
         return sideA;
     }
 
     public void setSideA(double sideA) {
-        this.sideA = sideA;
+        this.sideA.setLength( sideA);
     }
 
     public double getSideB() {
-        if(sideB!=0.0) {
-            return sideB;
+        if(sideB.getLength()!=0.0) {
+            return sideB.getLength();
         }
         else {
-            if(perimeter!=0.0&sideA!=0.0&sideC!=0.0){
-                sideB = perimeter-sideC-sideB;
-                return sideB;
+            if(perimeter!=0.0&sideA.getLength()!=0.0&sideC.getLength()!=0.0){
+                sideB.setLength( perimeter-sideC.getLength()-sideB.getLength());
+                return sideB.getLength();
             }
             return 0.0;
         }
     }
 
     public void setSideB(double sideB) {
-        this.sideB = sideB;
+        this.sideB.setLength(sideB);
     }
 
     public double getSideC() {
-        return sideC;
+        return sideC.getLength();
     }
 
     public void setSideC(double sideC) {
-        this.sideC = sideC;
+        this.sideC.setLength(sideC);
     }
 
     public float getAngleA() {

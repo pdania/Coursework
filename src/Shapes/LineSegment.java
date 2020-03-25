@@ -27,6 +27,10 @@ public class LineSegment {
         end = new Dot(endName);
     }
 
+    public LineSegment() {
+
+    }
+
     public double getLength() {
         return length;
     }
