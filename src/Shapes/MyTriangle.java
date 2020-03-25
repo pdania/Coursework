@@ -134,7 +134,16 @@ public class MyTriangle implements Shape {
     }
 
     public double getSideB() {
-        return sideB;
+        if(sideB!=0.0) {
+            return sideB;
+        }
+        else {
+            if(perimeter!=0.0&sideA!=0.0&sideC!=0.0){
+                sideB = perimeter-sideC-sideB;
+                return sideB;
+            }
+            return 0.0;
+        }
     }
 
     public void setSideB(double sideB) {

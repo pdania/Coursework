@@ -30,14 +30,15 @@ public class SyntaxAnalyzer {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        for (String word:exercise) {
-            System.out.println(word);
-        }
+//        for (String word:exercise) {
+//            System.out.println(word);
+//        }
             analyze(exercise);
 
 
     }
     private static void analyze ( Stack<String> exercise ){
+        String answer="";
         Shape sh=new Shape() {
             @Override
             public double perimeter() {
@@ -82,9 +83,35 @@ public class SyntaxAnalyzer {
                 }
 
 
+            fst = exercise.get(i);
+            if(fst.equals("бічна")){
+                String snd = exercise.get(++i);
+                while(!isNumeric(snd)){
+                    snd = exercise.get(++i);
+                }
+                ((MyTriangle) sh).setSideA(Double.parseDouble(snd));
+                ((MyTriangle) sh).setSideC(Double.parseDouble(snd));
 
+            }
+            if(fst.equals("сторона")){
+                String snd = exercise.get(++i);
+                while(!isNumeric(snd)){
+                    snd = exercise.get(++i);
+                }
+                //add which side
+//                ((MyTriangle) sh).setSideA(Double.parseDouble(snd));
+            }
+            //looking dor question
+            if(fst.equals("Знайдіть")){
+                int g = ++i;
+                String snd = exercise.get(g);
+                if(snd.equals("основу")){
+                    answer += "Основа="+((MyTriangle) sh).getSideB();
+                }
+            }
         }
 
+        System.out.println(answer);
             System.out.println(sh.toString());
 
     }
