@@ -2,10 +2,11 @@ package Shapes;
 
 import java.io.*;
 import java.util.Arrays;
+import java.util.Stack;
 
 public class SyntaxAnalyzer {
     public static void main(String[] args) {
-        String[] exe= new String[0];
+        Stack<String> exercise = new Stack<>();
         try {
             File file = new File("exercise.txt");
             //создаем объект FileReader для объекта File
@@ -18,10 +19,9 @@ public class SyntaxAnalyzer {
             while (line != null) {
                 //System.out.println(line);
                 String[] split = line.split(" ");
-                String[] joinedArray = new String[exe.length + split.length];
-                System.arraycopy(exe, 0, joinedArray, 0, exe.length);
-                System.arraycopy(split, 0, joinedArray, exe.length, split.length);
-                exe = joinedArray;
+                for (String word:split){
+                    exercise.push(word);
+                }
                 // считываем остальные строки в цикле
                 line = reader.readLine();
             }
@@ -30,8 +30,70 @@ public class SyntaxAnalyzer {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        for (String word:exe){
+        for (String word:exercise) {
             System.out.println(word);
+        }
+            analyze(exercise);
+
+
+    }
+    private static void analyze ( Stack<String> exercise ){
+        Shape sh=new Shape() {
+            @Override
+            public double perimeter() {
+                return 0;
+            }
+
+            @Override
+            public double area() {
+                return 0;
+            }
+        };
+        for (int i =0; i<exercise.size();++i) {
+            String fst = exercise.get(i);
+            if (fst.equals("Периметр")) {
+               int g =++i;
+                    String shape = exercise.get(g);
+
+                    //then we need to add other shapes and
+                    while (!shape.equals("трикутника")) {
+                        shape = exercise.get(g++);
+                    }
+                    sh = new MyTriangle();
+                    if(g>i){
+
+                            String type = exercise.get(i);
+                            if(type.equals("рівнобедренного")){
+                                ((MyTriangle) sh).setTriangleType(Type.Rivnobedrenyi);
+                            }
+                            if(type.equals("прямокутного")){
+                                ((MyTriangle) sh).setTriangleType(Type.Pryamokutnyi);
+                            } else if (  ((MyTriangle) sh).getTriangleType() == null){
+                                ((MyTriangle) sh).setTriangleType(Type.Riznostoronni);
+                            }
+
+                    }
+                String num = exercise.get(i++);
+                while (!isNumeric(num)){
+                    num = exercise.get(i++);
+                    i++;
+                }
+                ((MyTriangle) sh).setPerimeter( Double.parseDouble(num));
+                }
+
+
+
+        }
+
+            System.out.println(sh.toString());
+
+    }
+    private static boolean isNumeric(String str) {
+        try {
+            Double.parseDouble(str);
+            return true;
+        } catch(NumberFormatException e){
+            return false;
         }
     }
 }

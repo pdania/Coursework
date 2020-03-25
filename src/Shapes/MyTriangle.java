@@ -294,6 +294,32 @@ public class MyTriangle implements Shape {
             return Type.Pryamokutnyi;
         return Type.Riznostoronni;
     }
+
+    @Override
+    public String toString() {
+        return "MyTriangle{" +
+                "sideA=" + sideA +
+                ", sideB=" + sideB +
+                ", sideC=" + sideC +
+                ", angleA=" + angleA +
+                ", angleB=" + angleB +
+                ", angleC=" + angleC +
+                ", perimeter=" + perimeter +
+                ", ares=" + ares +
+                ", radiusOpys=" + radiusOpys +
+                ", radiusVpys=" + radiusVpys +
+                ", heightA=" + heightA +
+                ", heightB=" + heightB +
+                ", heightC=" + heightC +
+                ", bisectorA=" + bisectorA +
+                ", bisectorB=" + bisectorB +
+                ", bisectorC=" + bisectorC +
+                ", MedianA=" + MedianA +
+                ", MedianB=" + MedianB +
+                ", MedianC=" + MedianC +
+                ", triangleType=" + triangleType +
+                '}';
+    }
 }
 enum Type{
     Riznostoronni,
