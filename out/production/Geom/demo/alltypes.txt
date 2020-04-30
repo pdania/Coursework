@@ -1,0 +1,168 @@
+﻿com.pullenti.morph.CharsInfo: Информация о символах токена
+com.pullenti.morph.DerivateGroup: Дериватная группа
+com.pullenti.morph.DerivateWord: Слово толкового словаря
+com.pullenti.morph.Explanatory: Сервис для получение толковой информации о словах.   В настоящий момент поддержаны русский и украинский языки.
+com.pullenti.morph.ExplanWordAttr: Дополнительные характеристики слова
+com.pullenti.morph.LanguageHelper: Служба подержки языков.    В качестве универсальных идентификаторов языков выступает 2-х символьный идентификатор ISO 639-1.   Также содержит некоторые полезные функции.
+com.pullenti.morph.MorphAspect: Аспект (для глаголов)
+com.pullenti.morph.MorphBaseInfo: Базовая часть морфологической информации
+com.pullenti.morph.MorphCase: Падеж
+com.pullenti.morph.MorphClass: Часть речи
+com.pullenti.morph.MorphFinite: Это для английских глаголов
+com.pullenti.morph.MorphForm: Форма
+com.pullenti.morph.MorphGender: Род (мужской-средний-женский)
+com.pullenti.morph.MorphLang: Язык(и)
+com.pullenti.morph.MorphMiscInfo: Дополнительная морфологическая информация
+com.pullenti.morph.MorphMood: Наклонение (для глаголов)
+com.pullenti.morph.MorphNumber: Число (единственное-множественное)
+com.pullenti.morph.Morphology: Морфологический анализ текстов
+com.pullenti.morph.MorphPerson: Лицо (1, 2, 3)
+com.pullenti.morph.MorphTense: Время (для глаголов)
+com.pullenti.morph.MorphToken: Элементы, на которые разбивается исходный текст (токены)
+com.pullenti.morph.MorphVoice: Залог (для глаголов)
+com.pullenti.morph.MorphWordForm: Словоформа (вариант морфанализа лексемы)
+com.pullenti.ner._org.OrganizationKind: Разновидности организаций
+com.pullenti.ner._org.OrganizationReferent: Организация как сущность
+com.pullenti.ner._org.OrgProfile: Профили организации, хранятся в атрибутах ATTR_PROFILE, может быть несколько.
+com.pullenti.ner.address.AddressAnalyzer: Анализатор адресов
+com.pullenti.ner.address.AddressBuildingType: Тип строения
+com.pullenti.ner.address.AddressDetailType: Детализация местоположения
+com.pullenti.ner.address.AddressHouseType: Тип дома
+com.pullenti.ner.address.AddressReferent: Сущность, представляющая адрес
+com.pullenti.ner.address.StreetKind: Типы улиц
+com.pullenti.ner.address.StreetReferent: Улица, проспект, площадь, шоссе и т.п.
+com.pullenti.ner.AnalysisResult: Результат анализа
+com.pullenti.ner.Analyzer: Базовый класс для всех семантических анализаторов
+com.pullenti.ner.bank.BankAnalyzer: Анализатор банковских данных (счетов, платёжных реквизитов...)
+com.pullenti.ner.bank.BankDataReferent: Банковские данные (реквизиты)
+com.pullenti.ner.booklink.BookLinkAnalyzer: Анализатор ссылок на внешнюю литературу
+com.pullenti.ner.booklink.BookLinkReferent: Ссылка на внешний литературный источник (статью, книгу и пр.)
+com.pullenti.ner.booklink.BookLinkRefReferent: Ссылка на внешний литературный источник (статью, книгу и пр.)
+com.pullenti.ner.booklink.BookLinkRefType: Тип ссылки
+com.pullenti.ner.business.BusinessAnalyzer: Анализатор для бизнес-фактов
+com.pullenti.ner.business.BusinessFactKind: Типы бизнес-фактов
+com.pullenti.ner.business.BusinessFactReferent: Представление бизнес-факта
+com.pullenti.ner.business.FundsKind: Типы ценных бумаг
+com.pullenti.ner.business.FundsReferent: Ценные бумаги (акции, доли в уставном капитале и пр.)
+com.pullenti.ner.core.AnalysisKit: Внутренний аналитический контейнер данных
+com.pullenti.ner.core.AnalyzerData: Данные, полученные в ходе обработки анализатором
+com.pullenti.ner.core.AnalyzerDataWithOntology: Данные, полученные в ходе обработки, причём с поддержкой механизма онтологий
+com.pullenti.ner.core.BracketHelper: Поддержка анализа скобок и кавычек
+com.pullenti.ner.core.BracketParseAttr: Параметры выделения последовательности
+com.pullenti.ner.core.BracketSequenceToken: Представление последовательности, обрамлённой кавычками (скобками)
+com.pullenti.ner.core.CanBeEqualsAttrs: Атрибуты функции CanBeEqualsEx
+com.pullenti.ner.core.ConjunctionHelper: Поддержка работы с союзами (запятая тоже считается союзом)
+com.pullenti.ner.core.ConjunctionToken: Представление союзов (они могут быть из нескольких токенов, например, "из-за того что"   Получить можно с помощью ConjunctionHelper.TryParse(t)
+com.pullenti.ner.core.ConjunctionType
+com.pullenti.ner.core.GetTextAttr: Атрибуты получения текста
+com.pullenti.ner.core.IntOntologyCollection: Онтологический словарь
+com.pullenti.ner.core.IntOntologyItem: Элемент онтологического словаря
+com.pullenti.ner.core.IntOntologyToken: Это привязка элемента отнологии к тексту
+com.pullenti.ner.core.MiscHelper: Разные полезные процедурки
+com.pullenti.ner.core.NounPhraseHelper: Выделение именных групп (существительсно с согласованными прилагательными (если они есть).
+com.pullenti.ner.core.NounPhraseMultivarToken: Вариант расщепления именной группы, у которой слиплись существительные
+com.pullenti.ner.core.NounPhraseParseAttr: Параметры выделения
+com.pullenti.ner.core.NounPhraseToken: Токен для представления именной группы
+com.pullenti.ner.core.NumberExToken: Число с стандартный постфиксом (мерой длины, вес, деньги и т.п.)
+com.pullenti.ner.core.NumberExType: Единицы измерения для NumberExToken
+com.pullenti.ner.core.NumberHelper: Работа с числовыми значениями
+com.pullenti.ner.core.PrepositionHelper: Поддержка работы с предлогами
+com.pullenti.ner.core.PrepositionToken: Представление предлогов (они могут быть из нескольких токенов, например,    "несмотря на", "в соответствии с").   Получить можно с помощью PrepositionHelper.TryParse(t)
+com.pullenti.ner.core.ProperNameHelper: Поддержка работы с собственными именами
+com.pullenti.ner.core.StatisticCollection: Поддержка анализа биграммной зависимости токенов в тексте
+com.pullenti.ner.core.Termin: Термин, понятие, система обозначений чего-либо и варианты его написания
+com.pullenti.ner.core.TerminCollection: Коллекций некоторых обозначений, терминов
+com.pullenti.ner.core.TerminParseAttr: Патаметры выделения термина словаря (TryParse)
+com.pullenti.ner.core.TerminToken: Результат привязки термина
+com.pullenti.ner.core.VerbPhraseHelper: Работа с глагольными группами (последовательность из глаголов и наречий)
+com.pullenti.ner.core.VerbPhraseItemToken: Элемент глагольной группы
+com.pullenti.ner.core.VerbPhraseToken: Глагольная группа
+com.pullenti.ner.date.DateAnalyzer: Анализатор для дат и диапазонов дат
+com.pullenti.ner.date.DatePointerType: Дополнительные указатели для дат
+com.pullenti.ner.date.DateRangeReferent: Сущность, представляющая диапазон дат
+com.pullenti.ner.date.DateReferent: Сущность, представляющая дату
+com.pullenti.ner.decree.DecreeChangeKind: Типы изменений структурных элементов (СЭ)
+com.pullenti.ner.decree.DecreeChangeReferent: Модель изменения структурной части НПА
+com.pullenti.ner.decree.DecreeChangeValueKind: Типы изменяющих СЭ значений
+com.pullenti.ner.decree.DecreeChangeValueReferent: Значение изменения СЭ НПА
+com.pullenti.ner.decree.DecreeKind: Типы нормативных актов
+com.pullenti.ner.decree.DecreePartReferent: Сущность, представляющая ссылку на структурную часть НПА
+com.pullenti.ner.decree.DecreeReferent: Сущность, представляющая ссылку на НПА
+com.pullenti.ner.definition.DefinitionAnalyzer: Анализатор определений
+com.pullenti.ner.definition.DefinitionKind: Тип определения
+com.pullenti.ner.definition.DefinitionReferent: Сущность, моделирующая определение (утверждение, тезис)
+com.pullenti.ner.definition.DefinitionWithNumericToken: Для поддержки выделений тезисов с числовыми данными
+com.pullenti.ner.denomination.DenominationAnalyzer: Анализатор деноминаций и обозначений
+com.pullenti.ner.denomination.DenominationReferent: Сущность, моделирующая непонятные комбинации (например, Си++, СС-300)
+com.pullenti.ner.ExtOntology: Внешняя онтология
+com.pullenti.ner.ExtOntologyItem: Элемент внешней онтологии
+com.pullenti.ner.Feature: Атрибут класса сущностей
+com.pullenti.ner.geo.GeoAnalyzer: Анализатор стран
+com.pullenti.ner.geo.GeoReferent: Сущность, описывающая территорию как административную единицу.   Это страны, автономные образования, области, административные районы и пр.
+com.pullenti.ner.goods.GoodAttributeReferent: Атрибут товара
+com.pullenti.ner.goods.GoodAttrType: Типы атрибутоа
+com.pullenti.ner.goods.GoodReferent: Товар
+com.pullenti.ner.goods.GoodsAnalyzer: Анализатор для названий товаров (номенклатур) и их характеристик
+com.pullenti.ner.goods.GoodsAttrAnalyzer: Анализатор для названий товаров (номенклатур) и их характеристик
+com.pullenti.ner.ImageWrapper: Приходится работать через обёртку, так как некоторые реализации .NET не содержат System.Drawing   (например, для Андроида)
+com.pullenti.ner.instrument.InstrumentAnalyzer: Анализатор структуры нормативных актов и договоров
+com.pullenti.ner.instrument.InstrumentArtefact: Участник НПА (для договора: продавец, агент, исполнитель и т.п.)
+com.pullenti.ner.instrument.InstrumentBlockReferent: Представление нормативно-правового документа или его части
+com.pullenti.ner.instrument.InstrumentKind: Классы частей НПА
+com.pullenti.ner.instrument.InstrumentParticipant: Участник НПА (для договора: продавец, агент, исполнитель и т.п.)
+com.pullenti.ner.instrument.InstrumentReferent: Представление нормативно-правового документа или его части
+com.pullenti.ner.keyword.KeywordAnalyzer: Анализатор ключевых комбинаций
+com.pullenti.ner.keyword.KeywordReferent: Оформление ключевых слов и комбинаций
+com.pullenti.ner.keyword.KeywordType: Тип ключевой комбинации
+com.pullenti.ner.mail.MailAnalyzer: Анализатор анализа писем (блоков писем)
+com.pullenti.ner.mail.MailKind: Тип блока письма
+com.pullenti.ner.mail.MailReferent: Письмо (точнее, блок письма)
+com.pullenti.ner.measure.MeasureAnalyzer: Аналозатор для измеряемых величин
+com.pullenti.ner.measure.MeasureKind: Что измеряется этой величиной
+com.pullenti.ner.measure.MeasureReferent: Величина или диапазон величин, измеряемая в некоторых единицах
+com.pullenti.ner.measure.UnitReferent: Ежиница измерения
+com.pullenti.ner.MetaToken: Токен - надстройка над диапазоном других токенов
+com.pullenti.ner.money.MoneyAnalyzer: Анализатор для денежных сумм
+com.pullenti.ner.money.MoneyReferent: Представление денежных сумм
+com.pullenti.ner.MorphCollection: Коллекция морфологических вариантов
+com.pullenti.ner.named.NamedEntityAnalyzer: Анализатор мелких именованных сущностей (планеты, памятники, здания, местоположения, планеты и пр.)
+com.pullenti.ner.named.NamedEntityKind: Разновидности мелких именованных сущностей
+com.pullenti.ner.named.NamedEntityReferent: Текоторые мелкие именованные сущности (планеты, памятники, здания, местоположения, планеты и пр.)
+com.pullenti.ner.NumberSpellingType: Возможные типы написаний
+com.pullenti.ner.NumberToken: Числовой токен (числительное)
+com.pullenti.ner.person.PersonAnalyzer: Анализатор выделения персон
+com.pullenti.ner.person.PersonIdentityReferent: Удостоверение личности (паспорт и пр.)
+com.pullenti.ner.person.PersonPropertyKind: Типы свойств персон
+com.pullenti.ner.person.PersonPropertyReferent: Сущность, описывающая некоторое свойство физического лица
+com.pullenti.ner.person.PersonReferent: Сущность, описывающее физическое лицо
+com.pullenti.ner.phone.PhoneAnalyzer: Анализатор для выделения телефонных номеров
+com.pullenti.ner.phone.PhoneKind: Тип телефонного номера
+com.pullenti.ner.phone.PhoneReferent: Сущность, представляющая телефонные номера
+com.pullenti.ner.Processor: Семантический процессор
+com.pullenti.ner.ProcessorService: Глобальная служба семантического процессора
+com.pullenti.ner.Referent: Базовый класс для всех сущностей
+com.pullenti.ner.ReferentClass: Описатель некоторого класса сущностей
+com.pullenti.ner.ReferentToken: Токен, соответствующий сущности
+com.pullenti.ner.repository.RepositoryBase: Репозиторий сущностей (базовый класс)
+com.pullenti.ner.repository.RepositoryInputItem: Это обёртка для входной сущности
+com.pullenti.ner.repository.RepositoryItem: Элемент репозитория сущностей -   представление сущности для СУБД или какго другого внешнего хранилища   (обёртка над Referent)
+com.pullenti.ner.repository.RepositoryItemSample: Элемент примера сущности в тексте
+com.pullenti.ner.repository.RepositoryMessageArgs
+com.pullenti.ner.Sdk: Инициализация SDK
+com.pullenti.ner.sentiment.SentimentAnalyzer: Анализатор для сентиментов (эмоциональная оценка)
+com.pullenti.ner.sentiment.SentimentKind: Тип сентимента
+com.pullenti.ner.sentiment.SentimentReferent: Фрагмент, соответсвующий сентиментной оценке
+com.pullenti.ner.Slot: Значение атрибута в конкретном экземпляре сущности
+com.pullenti.ner.SourceOfAnalysis: Анализируемый текст
+com.pullenti.ner.TextAnnotation: Аннотация слитного фрагмента текста
+com.pullenti.ner.TextToken: Входной токен (после морфанализа)
+com.pullenti.ner.titlepage.TitlePageAnalyzer: Анализатор заголовочной информации
+com.pullenti.ner.titlepage.TitlePageReferent: Сущность, описывающая информацию из заголовков статей, книг, диссертация и пр.
+com.pullenti.ner.Token: Базовый класс для всех токенов
+com.pullenti.ner.transport.TransportAnalyzer: Анализатор транспортных стредств
+com.pullenti.ner.transport.TransportKind: Разновидности транспортных средств
+com.pullenti.ner.transport.TransportReferent: Транспортное средство
+com.pullenti.ner.uri.UriAnalyzer: Анализатор для выделения URI-объектов (схема:значение)
+com.pullenti.ner.uri.UriReferent: URI, а также ISBN, УДК, ББК, ICQ и пр. (всё, что укладывается в СХЕМА:ЗНАЧЕНИЕ)
+com.pullenti.ner.weapon.WeaponAnalyzer: Анализатор выделения оружия
+com.pullenti.ner.weapon.WeaponReferent: Оружие
